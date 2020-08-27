@@ -30,15 +30,3 @@ steps:
     echo "###########################Contents of the Dist folder are listed below##########################"
     cd dist && ls -l
   displayName: 'Install Dependencies'
-
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Free Trial(1)(dfadb5eb-8b3f-4f7f-a9ce-27ca16e8a363)'
-    appType: 'webApp'
-    WebAppName: 'angularpoc1'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'RajnikantsRG'
-    SlotName: 'production'
-    packageForLinux: 'dist/'
-  displayName: 'Deploying the application to Azure App Service.'
