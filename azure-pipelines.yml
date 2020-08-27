@@ -23,6 +23,11 @@ steps:
     npm install --save-dev ngx-bootstrap@5.2.0
     ng build
 
+    echo "unit testing"
+    ng test
+    echo "Testing Done"
+    ls -l
+
     echo "Working directory."
     pwd
     echo "directory content."
