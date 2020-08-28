@@ -28,6 +28,11 @@ steps:
     echo "Testing Done"
     ls -l
 
+    echo "E2E testing"
+    npm run e2e --browsers ChromeHeadless
+    echo "E2E testing done"
+
+
     echo "Working directory."
     pwd
     echo "directory content."
