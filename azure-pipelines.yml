@@ -19,17 +19,9 @@ steps:
     npm install -g @angular/cli@latest
     npm cache clean --force
     npm i
-    npm i --save-dev moment@2.24.0
-    npm install --save-dev ngx-bootstrap@5.2.0
-    ng build
+    ng build --prod
   displayName: 'Install Node.js'
 
-- script: |
-    echo "unit testing"
-    ng test --browsers ChromeHeadless --watch=false
-    echo "Testing Done"
-    ls -l
-  displayName: 'unit testing'
 
 - script: |
     echo "E2E testing"
