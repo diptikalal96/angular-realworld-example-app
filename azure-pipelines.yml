@@ -18,10 +18,10 @@ steps:
 - script: |
     npm install -g @angular/cli@latest
     npm cache clean --force
+    npm install puppeteer --save-dev
     npm i
     ng build --prod
   displayName: 'Install Node.js'
-
 
 - script: |
     echo "E2E testing"
