@@ -24,7 +24,7 @@ steps:
     ng build
 
     echo "unit testing"
-    ng test --browsers ChromeHeadless
+    ng test --browsers ChromeHeadless --watch=false
     echo "Testing Done"
     ls -l
 
