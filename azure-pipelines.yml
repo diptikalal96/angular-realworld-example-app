@@ -35,5 +35,5 @@ steps:
     echo "directory content."
     ls -al
     echo "###########################Contents of the Dist folder are listed below##########################"
-    cd dist && ls -l
+    cd dist && ls -l && cd e2e && ls -l
   displayName: 'Install Dependencies'
