@@ -25,7 +25,7 @@ steps:
 
 - script: |
     echo "E2E testing"
-    ng e2e --capabilities.chromeOptions.args="--headless"
+    ng e2e
     echo "E2E testing done"
   displayName: 'e2e testing'
 
