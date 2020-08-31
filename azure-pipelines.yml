@@ -24,16 +24,12 @@ steps:
 - script: |
     node node_modules/.bin/webdriver-manager update --versions.chrome=84.0.4147.135
     ng e2e --webdriverUpdate=false
-    ls -l
-    pwd
+
     echo "E2E testing done"
   displayName: 'e2e testing'
 
 - script: |
-    echo "Working directory."
-    pwd
-    echo "directory content."
-    ls -al
-    echo "###########################Contents of the Dist folder are listed below##########################"
+
+    echo "###########################Contents of the e2e folder are listed below##########################"
     cd e2e && ls -l
   displayName: 'Install Dependencies'
