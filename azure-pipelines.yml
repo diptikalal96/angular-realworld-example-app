@@ -24,7 +24,8 @@ steps:
 - script: |
     node node_modules/.bin/webdriver-manager update --versions.chrome=84.0.4147.135
     ng e2e --webdriverUpdate=false
-
+    echo "******************Google chrome version*****************"
+    google-chrome --version
     echo "E2E testing done"
   displayName: 'e2e testing'
 
