@@ -16,12 +16,11 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install -g @angular/cli@latest
-    npm cache clean --force
-    npm install puppeteer --save-dev
-    npm i
+    npm install -g @angular/cli
+    npm install
+    node node_modules/.bin/webdriver-manager update --versions.chrome=77.0.3865.40
     ng build --prod
-  displayName: 'Install Node.js'
+  displayName: npm install and build'
 
 - script: |
     echo "E2E testing"
