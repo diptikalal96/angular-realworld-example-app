@@ -9,10 +9,10 @@ exports.config = {
     './e2e/**/*.e2e-spec.ts'
   ],
   capabilities: {
-   'browserName': 'chrome',
-   chromeOptions: {
-   binary: process.env.CHROME_BIN,
-   args: ['--headless', '--no-sandbox']
+    browserName: 'chrome',
+    chromeOptions: {
+      args: ["--headless", "--disable-gpu", "--window-size=1280x1024"]
+      //binary: process.env.CHROME_BIN
     }
   },
   directConnect: true,
