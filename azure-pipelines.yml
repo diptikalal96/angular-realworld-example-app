@@ -19,10 +19,11 @@ steps:
     npm install
     ng build --prod
     ls -l
+    pwd
   displayName: npm install and build'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
+    PathtoPublish: '/home/vsts/work/1/s/dist'
     ArtifactName: 'dist'
     publishLocation: 'Container'
