@@ -34,14 +34,13 @@ steps:
     cd e2e && ls -l
   displayName: 'Install Dependencies'
 
-
 - task: AzureRmWebAppDeployment@4
   inputs:
-      ConnectionType: 'AzureRM'
-      azureSubscription: 'Free Trial(3ba9b75a-7a40-4fd3-aa2d-6b68d4431466)'
-      appType: 'webAppLinux'
-      WebAppName: 'angularapp-ext'
-      deployToSlotOrASE: true
-      ResourceGroupName: 'angular-app'
-      SlotName: 'production'
-      packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial(1)(3ba9b75a-7a40-4fd3-aa2d-6b68d4431466)'
+    appType: 'webAppLinux'
+    WebAppName: 'ext1'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'angular-app'
+    SlotName: 'production'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
