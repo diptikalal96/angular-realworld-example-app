@@ -21,22 +21,8 @@ steps:
     ls -l
   displayName: npm install and build'
 
-- script: |
-    node node_modules/.bin/webdriver-manager update --versions.chrome=84.0.4147.135
-    ng e2e --webdriverUpdate=false
-    echo "******************Google chrome version*****************"
-    google-chrome --version
-    echo "E2E testing done"
-  displayName: 'e2e testing'
-
-
-- task: AzureRmWebAppDeployment@4
+- task: PublishBuildArtifacts@1
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Free Trial(1)(3ba9b75a-7a40-4fd3-aa2d-6b68d4431466)'
-    appType: 'webAppLinux'
-    WebAppName: 'ext1'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'angular-app'
-    SlotName: 'production'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
+    ArtifactName: 'dist'
+    publishLocation: 'Container'
