@@ -18,6 +18,7 @@ steps:
     npm install -g @angular/cli
     npm install
     ng build --prod
+    ls -l
   displayName: npm install and build'
 
 - script: |
@@ -28,11 +29,6 @@ steps:
     echo "E2E testing done"
   displayName: 'e2e testing'
 
-- script: |
-
-    echo "###########################Contents of the e2e folder are listed below##########################"
-    cd e2e && ls -l
-  displayName: 'Install Dependencies'
 
 - task: AzureRmWebAppDeployment@4
   inputs:
