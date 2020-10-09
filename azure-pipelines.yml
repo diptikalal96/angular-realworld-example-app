@@ -18,9 +18,11 @@ steps:
     npm install -g @angular/cli
     npm install
     ng build --prod
-    cd dist
+    
     ls -l
+    echo "copying main.ts to dist"
     cp ./src/main.ts ./dist/main.ts
+    cd dist && ls -l
   displayName: npm install and build'
   
 - task: PublishBuildArtifacts@1
