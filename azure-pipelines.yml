@@ -26,6 +26,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '/home/vsts/work/1/s/dist'
+    PathtoPublish: '/home/vsts/work/1/s/dist/'
     ArtifactName: 'dist'
     publishLocation: 'Container'
