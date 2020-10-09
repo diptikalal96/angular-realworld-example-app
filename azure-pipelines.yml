@@ -24,8 +24,17 @@ steps:
     ls -l
   displayName: npm install and build'
 
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)/dist'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: 'dist.zip'
+    replaceExistingArchive: true
+    verbose: true
+
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '/home/vsts/work/1/s/dist'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/dist.zip'
     ArtifactName: 'dist'
     publishLocation: 'Container'
