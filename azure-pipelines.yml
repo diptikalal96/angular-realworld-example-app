@@ -25,4 +25,8 @@ steps:
     PathtoPublish: 'dist'
     ArtifactName: 'app'
     publishLocation: 'Container'
+    
+- script: |
+    ls -l
+    pwd
 
