@@ -20,6 +20,7 @@ steps:
     ng build --prod
     cd dist
     ls -l
+    cp ./src/main.ts ./dist/main.ts
   displayName: npm install and build'
   
 - task: PublishBuildArtifacts@1
