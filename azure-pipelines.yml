@@ -22,19 +22,16 @@ steps:
     cd dist
     pwd
     ls -l
+    zip -r foo.zip .
   displayName: npm install and build'
 
-- task: ArchiveFiles@2
+- task: AzureRmWebAppDeployment@4
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip' 
-    replaceExistingArchive: true
-    verbose: true
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    ArtifactName: 'dist'
-    publishLocation: 'Container'
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial(1)(3ba9b75a-7a40-4fd3-aa2d-6b68d4431466)'
+    appType: 'webAppLinux'
+    WebAppName: 'ext1'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'angular-app'
+    SlotName: 'production'
+    packageForLinux: '/home/vsts/work/1/s/dist/foo.zip'
