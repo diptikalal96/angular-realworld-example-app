@@ -24,13 +24,8 @@ steps:
   
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: './dist'
-    ArtifactName: 'app'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/dist'
+    ArtifactName: 'drop'
     publishLocation: 'Container'
 
-- script: |
-    ls -al
-    echo "Inside dist"
-    pwd
-    ls -al
 
