@@ -18,14 +18,15 @@ steps:
     npm install -g @angular/cli
     npm install
     ng build --prod
-    
-    ls -l
+    rsync -av --progress . ./dist --exclude node_modules
+    cd dist && ls -l
+    cd ..
   displayName: npm install and build'
   
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: './dist'
-    ArtifactName: 'drop'
+    ArtifactName: 'dist'
     publishLocation: 'Container'
 
 
