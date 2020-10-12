@@ -21,6 +21,7 @@ steps:
     
     ls -l
     echo "copying main.ts to dist"
+    cp -r ./node_modules ./dist/node_modules
     cp ./src/main.ts ./dist/main.ts
     cd dist && ls -l
   displayName: npm install and build'
@@ -30,8 +31,5 @@ steps:
     PathtoPublish: './dist'
     ArtifactName: 'dist'
     publishLocation: 'Container'
-    
-- script: |
-    ls -l
-    pwd
+
 
