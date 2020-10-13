@@ -26,5 +26,10 @@ steps:
 - script: |
     ls -l
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '''$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'''
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 
 
