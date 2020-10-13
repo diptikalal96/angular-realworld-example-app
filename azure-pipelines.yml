@@ -14,19 +14,17 @@ steps:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install -g @angular/cli
-    npm install
-    ng build --prod
-    rsync -av --progress . ./dist --exclude node_modules
-    cd dist && ls -l
-    cd ..
-  displayName: npm install and build'
-  
-- task: PublishBuildArtifacts@1
+- task: ArchiveFiles@2
   inputs:
-    PathtoPublish: './dist'
-    ArtifactName: 'dist'
-    publishLocation: 'Container'
+    rootFolderOrFile: '.'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+    verbose: true
+  
+- script: |
+    ls -l
+
 
 
